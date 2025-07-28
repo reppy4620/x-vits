@@ -2,7 +2,7 @@ from enum import Enum
 
 LRELU_SLOPE = 0.1
 
-JAPANESE_BERT_MODEL_NAME = "globis-university/deberta-v3-japanese-xsmall"
+JAPANESE_BERT_MODEL_NAME = "sbintuitions/modernbert-ja-30m"
 ENGLISH_BERT_MODEL_NAME = "microsoft/deberta-v3-xsmall"
 
 
@@ -14,7 +14,7 @@ class LANGUAGE(Enum):
     def from_str(self, s):
         return dict(
             EN=LANGUAGE.ENGLISH,
-            JA=LANGUAGE.JAPANESE,
+            JP=LANGUAGE.JAPANESE,
         )[s]
 
 

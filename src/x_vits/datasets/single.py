@@ -13,7 +13,7 @@ from x_vits.utils.logging import logger
 
 
 class SingleSpeakerDataset(Dataset):
-    def __init__(self, df_file, wav_dir, cf0_dir, vuv_dir, spec_tfm, language="JA"):
+    def __init__(self, df_file, wav_dir, cf0_dir, vuv_dir, spec_tfm, language="JP"):
         logger.info(f"Loading dataset... : {df_file}")
         self.wav_dir = Path(wav_dir)
         self.cf0_dir = Path(cf0_dir)

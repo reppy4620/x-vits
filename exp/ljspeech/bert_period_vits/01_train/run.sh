@@ -4,7 +4,7 @@ bin_dir=../../../../src/x_vits/bin
 
 model_name=bert_period_vits
 
-HYDRA_FULL_ERROR=1 TOKENIZERS_PARALLELISM=false python ${bin_dir}/train.py \
+HYDRA_FULL_ERROR=1 TOKENIZERS_PARALLELISM=false uv run ${bin_dir}/train.py \
     generator=${model_name} \
     generator.text_encoder.num_vocab=151 \
     generator.context_embedder.language=EN \

@@ -35,7 +35,7 @@ cd -
 
 # Preprocess : Extract CF0, VUV and duration from alignment files
 bin_dir=../../../../src/x_vits/bin
-HYDRA_FULL_ERROR=1 python ${bin_dir}/preprocess.py \
+HYDRA_FULL_ERROR=1 uv run ${bin_dir}/preprocess.py \
     path=ljspeech \
     mel=ljspeech \
     preprocess.type=LJSPEECH \
