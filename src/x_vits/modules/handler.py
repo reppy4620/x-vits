@@ -1,4 +1,4 @@
-from typing import Dict, NamedTuple
+from typing import NamedTuple, Optional
 
 import torch
 import torch.nn as nn
@@ -7,14 +7,12 @@ from x_vits.modules.alignment import viterbi_decode
 from x_vits.utils.model import generate_path, length_to_mask, to_log_scale
 
 
-
-
 class DurationHandlerOutput(NamedTuple):
     x_frame: torch.Tensor
     p_attn: torch.Tensor
     duration: torch.Tensor
     y_mask: torch.Tensor
-    loss_dict: Dict[str, torch.Tensor] = None
+    loss_dict: Optional[dict[str, torch.Tensor]] = None
 
 
 class DurationHandler(nn.Module):

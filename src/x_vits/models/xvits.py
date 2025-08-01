@@ -108,6 +108,9 @@ class XVITS(nn.Module):
             loss_vuv = F.mse_loss(vuv_pred, vuv, reduction="sum") / spec_lengths.sum()
             loss_kl = kl_loss(z_p, logs_q, m_p, logs_p, y_mask)
             if self.style_encoder and self.style_diffusion:
+                assert cond is not None, (
+                    "Conditioning should not be None when style diffusion is used"
+                )
                 loss_diff = self.style_diffusion(
                     cond.detach().unsqueeze(1),
                     embedding=phoneme_level_feature,

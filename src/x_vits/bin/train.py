@@ -6,7 +6,6 @@ from lightning import LightningModule, Trainer, seed_everything
 from lightning.pytorch.callbacks import (
     ModelCheckpoint,
     RichModelSummary,
-    RichProgressBar,
 )
 from lightning.pytorch.loggers import CSVLogger
 from omegaconf import OmegaConf
@@ -45,7 +44,7 @@ def main(cfg):
     trainer = Trainer(
         logger=[csv_logger],
         max_steps=cfg.train.num_steps,
-        callbacks=[ckpt_callback, RichModelSummary(), RichProgressBar()],
+        callbacks=[ckpt_callback, RichModelSummary()],
         **cfg.train.trainer_args,
     )
     lit_module.trainer = trainer

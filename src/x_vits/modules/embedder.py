@@ -1,8 +1,12 @@
+import os
+
 import torch
 import torch.nn as nn
 from transformers import AutoModel, AutoTokenizer
 
 from x_vits.utils.const import ENGLISH_BERT_MODEL_NAME, JAPANESE_BERT_MODEL_NAME, LANGUAGE
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"  # Disable parallelism to avoid warnings
 
 
 class ContextEmbedder(nn.Module):
